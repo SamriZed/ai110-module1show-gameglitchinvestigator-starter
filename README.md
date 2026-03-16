@@ -25,13 +25,23 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
+- [] Describe the game's purpose.
+
+The purpose of the game is to guess a secret number within a certain range based on the selected difficulty level. The player receives hints such as “Go Higher” or “Go Lower” after each guess to help them find the correct number. The game also tracks the number of attempts and calculates a score based on how quickly the player guesses the correct number. 
+
 - [ ] Detail which bugs you found.
+
+Several bugs were present in the original AI-generated code. The hint system sometimes gave the wrong direction, telling the player to go lower even when the secret number was higher than the guess. The game also revealed the secret number before the player had used all their attempts. Another issue was that the New Game button did not properly reset the game, requiring the page to be refreshed manually. Additionally, the attempts counter and guess history did not update immediately after submitting a guess.
+
 - [ ] Explain what fixes you applied.
+
+To fix these issues, I corrected the guess comparison logic so the hints always match whether the guess is too high or too low. I fixed the attempt limit condition so the game only ends when the player actually runs out of attempts. I also added st.rerun() after processing a guess so that the attempts counter and guess history update immediately. Finally, I updated the New Game logic to reset the session state values, including the secret number, attempts, history, and status, so the game restarts correctly.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+![alt text](image-1.png) 
+
+![alt text](image-3.png)
 
 ## 🚀 Stretch Features
 
